@@ -1,7 +1,7 @@
 ! ############################################################################################### !
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !       The Hard Gaussian Overlap (B. J. Berne & P. Pechukas, 1972) model is used to trial        !
-!        movements and establishes the molecular configurations (position and orientation)        !
+!            moves, and establishes the molecular configurations (position and orientation)       !
 !                                    of the Reference System.                                     !
 !      The spherical square-well potential is used to model the intermolecular interactions       !
 !                                    in the Perturbed System.                                     !
@@ -340,7 +340,7 @@ program main
 	! ***************************************************************************************
 	! Active transformation
 	! ***************************************************************************************
-	!  Converts the unit quaternion into an active rotation/transformation in the 3D Euclidian space
+	!  Converts the unit quaternion into an active rotation/transformation in the 3D Euclidean space
 	!  See 'subroutines' code for more details.
 	! ***************************************************************************************
 	do i = 1, n_particles
@@ -428,17 +428,17 @@ program main
 	!  Translation and rotation are independent moves.
 	! ***************************************************************************************
 	resetmc   = .false.	! Monte Carlo parameters resetting		(initial value)
-	mov_trans = .false.	! Translational movement selector		(initial value)
-	mov_rot   = .false.	! Rotational movement selector			(initial value)
+	mov_trans = .false.	! Translational move selector		        (initial value)
+	mov_rot   = .false.	! Rotational move selector			(initial value)
 	stop_t    = .false.	! Translational ratio threshold modifier	(initial value)
 	stop_r    = .false.	! Rotational ratio threshold modifier		(initial value)
 	drmax     = max_trans	! Maximum translational displacement		(initial value)
 	angmax    = max_rot	! Maximum rotational displacement		(initial value)
 	reset_c   = 0		! Monte Carlo parameter resets counter		(initial value)
-	nacct     = 0		! Translational movement acceptance counter	(initial value)
-	naccr     = 0		! Rotational movement acceptance counter	(initial value)
-	movt      = 0		! Translational movement counter		(initial value)
-	movr      = 0		! Rotational movement counter			(initial value)
+	nacct     = 0		! Translational move acceptance counter  	(initial value)
+	naccr     = 0		! Rotational move acceptance counter	        (initial value)
+	movt      = 0		! Translational move counter			(initial value)
+	movr      = 0		! Rotational move counter			(initial value)
 	r_acc_r   = 0.5d0	! Translational acceptance ratio threshold	(initial value)
 	r_acc_t   = 0.5d0 	! Rotational acceptance ratio threshold		(initial value)
 	qmc(:,:)  = q(:,:)	! Quaternion algebra				(initial value)
@@ -501,9 +501,9 @@ program main
 		end if
 
 		! *******************************************************************************
-		! Random Movement Selection
+		! Random Move Selection
 		! *******************************************************************************
-		!  Both movements (rotation and translation) have the same likelihood of being
+		!  Both moves (rotation and translation) have the same likelihood of being
 		!  chosen. The variables 'movt' and 'movr' represent how many times translation
 		!  and rotation are randomly chosen, respectively. These variables will be
 		!  required during displacement adjustment.
@@ -521,14 +521,14 @@ program main
 			if ( random_n < 0.5d0 ) then
 				mov_trans = .true.	! Enable translation
 				mov_rot   = .false.	! Disable rotation
-				movt      = movt + 1	! Increment movement counter
+				movt      = movt + 1	! Increment move counter
 			! ***********************************************************************
 			! Rotation criterion
 			! ***********************************************************************
 			else if ( random_n >= 0.5d0 ) then
 				mov_rot   = .true.	! Enable rotation
 				mov_trans = .false.	! Disable translation
-				movr      = movr + 1	! Increment movement counter
+				movr      = movr + 1	! Increment move counter
 			end if
 		! *******************************************************************************
 		! Spherical case (only translational DOFs)
@@ -538,7 +538,7 @@ program main
 		else
 			mov_trans = .true.		! Enable translation (permanently)
 			mov_rot	  = .false.		! Disable rotation (permanently)
-			movt	  = movt+1		! Increment movement counter
+			movt	  = movt+1		! Increment move counter
 		end if
 
 		! *******************************************************************************
@@ -572,7 +572,7 @@ program main
 		! *******************************************************************************
 		! Random Displacement (trial move of particle i)
 		! *******************************************************************************
-		!  Both movements, rotation and translation, are independent moves, which means
+		!  Both moves, rotation and translation, are independent moves, which means
 		!  a random particle i performs either a translational or rotational displacement
 		!  at a time.
 		! *******************************************************************************
@@ -631,7 +631,7 @@ program main
 			! Active transformation
 			! ***********************************************************************
 			!  Converts the unit quaternion into an active rotation/transformation
-			!  in the 3D Euclidian space.
+			!  in the 3D Euclidean space.
 			! ***********************************************************************
 			call active_transformation(fixed_axis,qn,en)
 
@@ -649,7 +649,7 @@ program main
 		! *******************************************************************************
 		! Metropolis criterion (Boltzmann factor of the energy difference)
 		! *******************************************************************************
-		!  The Metropolis criterion establishes whether a trial movement will be accepted or
+		!  The Metropolis criterion establishes whether a trial move will be accepted or
 		!  rejected, which is decided based on the potential energy difference of microstates 
 		!  n and m, that is, δUₙₘ = (Uₙ - Uₘ).
 		!
@@ -666,7 +666,7 @@ program main
 		!  than or equal to any random_number.
 		!
 		!  In other words, for hard-core fluids, if there is no overlap of particles, then the
-		!  trial movement is immediately accepted. Otherwise, it is rejected.
+		!  trial move is immediately accepted. Otherwise, it is rejected.
 		!
 		!  See Allen and Tildesley, 2nd Edition (2017), pages 155-160 for more information
 		! *******************************************************************************
@@ -681,7 +681,7 @@ program main
 		call check_overlap(i,en,rn,overlap)
 
 		! *******************************************************************************
-		! Movement Accepted
+		! Move Accepted
 		! *******************************************************************************
 		if ( .not. overlap ) then
 
@@ -713,7 +713,7 @@ program main
 			! ***********************************************************************
 			! Displacement counter update
 			! ***********************************************************************
-			!  Only updates if the movement has been previously selected from a
+			!  Only updates if the move has been previously selected from a
 			!  uniform distribution.
 			! ***********************************************************************
 			if ( mov_trans ) then
