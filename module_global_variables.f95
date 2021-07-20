@@ -52,10 +52,10 @@ module globalvar
 	integer*8		:: n_equil		! Number of equilibration cycles
 	integer*8		:: n_save		! Results saving frequency
 	integer*8		:: n_adjust		! Maximum displacement adjustment frequency
-	integer*8		:: nacct		! Movement acceptance counter: Translation
-	integer*8		:: naccr		! Movement acceptance counter: Rotation
-	integer*8		:: movt			! Movement counter (Translation)
-	integer*8		:: movr			! Movement counter (Rotation)
+	integer*8		:: nacct		! Move acceptance counter: Translation
+	integer*8		:: naccr		! Move acceptance counter: Rotation
+	integer*8		:: movt			! Move counter (Translation)
+	integer*8		:: movr			! Move counter (Rotation)
 
 	! ***************************************************************************************
 	! Integer variables (Block Averaging)
@@ -143,7 +143,7 @@ module globalvar
 	logical			:: traj_check		! Checks inquiry of trajectory output
 	logical			:: potential_check	! Checks inquiry of potential output
 	logical			:: coef_check		! Checks inquiry of coefficient output
-	logical			:: mov_rot		! Rotation movement selection				: TRUE = movement selected; FALSE = movement not selected
+	logical			:: mov_rot		! Rotation move selection				: TRUE = movement selected; FALSE = movement not selected
 	logical			:: mov_trans		! Translation movement selection			: TRUE = movement selected; FALSE = movement not selected
 	logical			:: stop_r		! Ratio threshold modifier (rotational move)		: TRUE = stop modification; FALSE = continue modification
 	logical 		:: stop_t		! Ratio threshold modifier (translational move)		: TRUE = stop modification; FALSE = continue modification
