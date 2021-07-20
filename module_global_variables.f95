@@ -1,4 +1,4 @@
-! ############################################################################################### !
+! ############################################################################################### 
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !           This module defines the variables used by the main program and most of the            !
 !         subroutines and functions. A brief description is presented for each variable.          !
