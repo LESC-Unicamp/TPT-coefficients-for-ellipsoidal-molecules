@@ -27,7 +27,7 @@
 ! *********************************************************************************************** !
 double precision function sigmahgo(ei,ej,urij)
 
-	! Uses one module: global variable
+	! Uses one module: global variables
 	use globalvar
 
 	implicit none
