@@ -1,4 +1,4 @@
-! ############################################################################################### !
+! ############################################################################################### 
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !      This module initialize common variables (number of particles, reduced number density,      !
 !       reduced temperature etc.), Monte Carlo parameters (total number of cycles, number of      ! 
