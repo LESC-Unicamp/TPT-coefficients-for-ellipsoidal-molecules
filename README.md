@@ -32,7 +32,7 @@
                          \______/   |__/  \__/  |______/   \______/   |__/  |__/  |__/     |__/  |__/
 ```
 
-<p align="center"><b>Authors</b></p>
+<p align="center"><b>Authors</b></p
 <p align="center">
 Nathan Barros de Souza<br>
 Joyce Tavares Lopes<br>
