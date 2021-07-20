@@ -1,4 +1,4 @@
-! ############################################################################################### !
+! ############################################################################################### 
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !  This module allows the user to choose one of the stretched/narrowed molecular configurations:  !
 !             simple cube (SC), body-centered cube (BCC), or face-centered cube (FCC).            !
