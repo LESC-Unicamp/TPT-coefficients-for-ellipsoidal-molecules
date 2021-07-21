@@ -1,4 +1,4 @@
-! ############################################################################################### !
+! ############################################################################################### 
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !       The Hard Gaussian Overlap (B. J. Berne & P. Pechukas, 1972) model is used to trial        !
 !            moves, and establishes the molecular configurations (position and orientation)       !
