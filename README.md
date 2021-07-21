@@ -346,4 +346,4 @@ At the end of the simulation, the program writes out a log file containing all s
 
 ---
 
-“<i>With thermodynamics, one can calculate almost everything crudely; with kinetic theory, one can calculate fewer things, but more accurately; and with statistical mechanics, one can calculate almost nothing exactly.</i>” -- Eugene Wigner
+“<i>With thermodynamics, one can calculate almost everything crudely; with kinetic theory, one can calculate fewer things, but more accurately; and with statistical mechanics, one can calculate almost nothing exactly.</i>” -- Eugene P. Wigner
