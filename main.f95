@@ -859,7 +859,7 @@ program main
 					! *******************************************************
 					! Dynamic threshold (rotation) - Decrease value
 					! *******************************************************
-					if ( ( angmax * ( 0.5d0 * max_elong ) ) < 1.d-4 ) &		! Arbitrary condition
+					if ( ( ( angmax * ( 0.5d0 * max_elong ) ) < 1.d-4 ) &		! Arbitrary condition
 					&   .and. ( .not. stop_r ) ) then
 						msgaux  = r_acc_r
 						r_acc_r = 0.95d0 * r_acc_r				! Arbitrary modification
