@@ -48,7 +48,6 @@ module globalvar
 	! ***************************************************************************************
 	integer*8		:: cycles		! Counter of cycles
 	integer*8		:: reset_c		! Counter of Monte Carlo parameter resets
-	integer*8		:: lost_eq  		! Equilibration cycles lost due to parameter reset
 	integer*8		:: max_cycles		! Total number of cycles
 	integer*8		:: n_equil		! Number of equilibration cycles
 	integer*8		:: n_save		! Results saving frequency
