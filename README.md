@@ -223,7 +223,7 @@ The initial configuration (position and orientation of particles) is, by default
 
 ## Files and Folders
 <p align="justify">
-After choosing the crystalline structure and inserting the values of <code>&rho;*</code> and <code>&kappa;</code>, the program will organize the output files and directories.
+After choosing the crystalline structure and inserting the values of <code>&kappa;&rho;*</code> and <code>&kappa;</code>, the program will organize the output files and directories.
  The program creates <b>6</b> parent directories in total. To better organize the output files, all directories (or subdirectories) contains a date folder, corresponding to the 
  starting date of the simulation (e.g. <code>20210101</code> means the simulation strated at January 1st, 2021).</p>
 
@@ -257,7 +257,7 @@ The aforementioned folders are created by executing a shell command via an intri
 
 <p align="justify">
 File names are based on the information they hold, followed by the reduced number density and elongation parameters that were used to create them. Files with identical names
- are always overwritten. Thus, running simulations with the same <code>&rho;*</code> and <code>&kappa;</code> at the same date will always overwrite existing data.</p>
+ are always overwritten. Thus, running simulations with the same <code>&kappa;&rho;*</code> and <code>&kappa;</code> at the same date will always overwrite existing data.</p>
 
 ## Running the Code
 <p align="justify">
@@ -306,7 +306,7 @@ The simulation is splitted into two phases: the equilibration phase and the prod
  negatively adjusted by 5% of their current value. If the number of accepted moves divided by the   
  number of trial moves (acceptance ratio) is higher than a initially fixed threshold of 0.5, then the MDs are positively adjusted, and vice-versa. In some cases, the 
  equilibration phase 
- performs poorly. For instance, for low density systems (<i>i.e.</i> <code>&rho;* = 0.1</code>) and composed of quasi-spherical particles (<i>i.e.</i>
+ performs poorly. For instance, for low density systems composed of quasi-spherical particles (<i>i.e.</i>
  <code>&kappa; = 0.9</code>), most of the trial moves are accepted regarding rotational displacements. In that case, the sampling generally fails to generate overlapping
  configurations and thus the MRD will frequently undergo a positive adjustment. Eventually, the MRD skyrockets to impracticable values, leading to mathematical inaccuracies.
  Therefore, we decided to replace the fixed threshold by a "dynamic threshold". This dynamic threshold is arbitrarily modified everytime the MD values reach a limit. For MTD, 
