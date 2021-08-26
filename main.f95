@@ -169,7 +169,7 @@ program main
 	print *, " "
 	print *, "Data read successfully!         "
 	print *, "Number of particles:            ", n_particles
-	print *, "Reduced number density:         ", rho
+	print *, "Reduced number density (κρ*):   ", rho
 	print *, "Reduced temperature:            ", temp
 	print *, "Ellipsoid elongation:           ", elongation
 	print *, "Quaternion angle:               ", quaternion_angle
@@ -1091,7 +1091,7 @@ program main
 
 					write ( 150, "(A18,I4.4)" ) "No. of particles: ", n_particles
 					write ( 150, "(A21,F4.2)" ) "Reduced temperature: ", temp
-					write ( 150, "(A24,F4.2)" ) "Reduced number density: ", rho
+					write ( 150, "(A24,F4.2)" ) "Reduced number density (κρ*): ", rho
 					write ( 150, "(A12,F5.2)" ) "Elongation: ", elongation
 					write ( 150, "(A18,F4.2)" ) "Attractive range: ", lambda(counter_lambda)
 					write ( 150, * ) " "
@@ -1174,21 +1174,21 @@ program main
 			write ( 95, 700 ) date_time(1), date_time(2), date_time(3), &
 			&		  date_time(5), date_time(6), date_time(7)
 			write ( 95, * ) " "
-			write ( 95, "(A27,5X,A20)" ) "Number of Particles:       ", adjustl ( char_label(1)  )
-			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:      ", adjustl ( char_label(2)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density:    ", adjustl ( char_label(3)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:       ", adjustl ( char_label(4)  )
+			write ( 95, "(A27,5X,A20)" ) "Number of Particles:          ", adjustl ( char_label(1)  )
+			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:         ", adjustl ( char_label(2)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density (κρ*): ", adjustl ( char_label(3)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:          ", adjustl ( char_label(4)  )
 			if ( coef_check ) then
-				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks : ", adjustl ( char_label(5)  )
-				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks : ", adjustl ( char_label(6)  )
+				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
+				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks :    ", adjustl ( char_label(6)  )
 			end if
-			write ( 95, "(A27,5X,A30)" ) "Attractive Range:          ", adjustl ( char_label(7)  )
-			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:    ", adjustl ( char_label(8)  )
-			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:      ", adjustl ( char_label(9)  )
-			write ( 95, "(A27,5X,A20)" ) "Production Cycles:         ", adjustl ( char_label(10) )
-			write ( 95, "(A27,5X,A20)" ) "Data Saving Frequency :    ", adjustl ( char_label(11) )
-			write ( 95, "(A27,5X,A20)" ) "Adjustment Frequency:      ", adjustl ( char_label(12) )
-			write ( 95, "(A27,5X,A20)" ) "Simulation Resets:         ", adjustl ( char_label(13) )
+			write ( 95, "(A27,5X,A30)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
+			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:       ", adjustl ( char_label(8)  )
+			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:         ", adjustl ( char_label(9)  )
+			write ( 95, "(A27,5X,A20)" ) "Production Cycles:            ", adjustl ( char_label(10) )
+			write ( 95, "(A27,5X,A20)" ) "Data Saving Frequency :       ", adjustl ( char_label(11) )
+			write ( 95, "(A27,5X,A20)" ) "Adjustment Frequency:         ", adjustl ( char_label(12) )
+			write ( 95, "(A27,5X,A20)" ) "Simulation Resets:            ", adjustl ( char_label(13) )
 			write ( 95, * ) " "
 			if ( traj_check ) then
 				write ( 95, "(A33)" ) "Trajectory of particles computed."
@@ -1206,7 +1206,7 @@ program main
 				write ( 95, "(A46)" ) "Potential energy computed only for all cycles."
 			end if
 			write ( 95, * )  " "
-			write ( 95, "(A27,5X,A20,A4)")  "Simulation length:         ", &
+			write ( 95, "(A27,5X,A20,A4)")  "Simulation length:            ", &
 			&				 adjustl ( char_label(14) ), " sec"
 		close ( 95 )
 	! ***************************************************************************************
@@ -1220,21 +1220,21 @@ program main
 			write ( 95, 700 ) date_time(1), date_time(2), date_time(3), &
 			&		  date_time(5), date_time(6), date_time(7)
 			write ( 95, * ) " "
-			write ( 95, "(A27,5X,A20)" ) "Number of Particles:       ", adjustl ( char_label(1)  )
-			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:      ", adjustl ( char_label(2)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density:    ", adjustl ( char_label(3)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:       ", adjustl ( char_label(4)  )
+			write ( 95, "(A27,5X,A20)" ) "Number of Particles:          ", adjustl ( char_label(1)  )
+			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:         ", adjustl ( char_label(2)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density (κρ*): ", adjustl ( char_label(3)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:          ", adjustl ( char_label(4)  )
 			if ( coef_check ) then
-				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks : ", adjustl ( char_label(5)  )
-				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks : ", adjustl ( char_label(6)  )
+				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
+				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks :    ", adjustl ( char_label(6)  )
 			end if
-			write ( 95, "(A27,5X,A30)" ) "Attractive Range:          ", adjustl ( char_label(7)  )
-			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:    ", adjustl ( char_label(8)  )
-			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:      ", adjustl ( char_label(9)  )
-			write ( 95, "(A27,5X,A20)" ) "Production Cycles:         ", adjustl ( char_label(10) )
-			write ( 95, "(A27,5X,A20)" ) "Data Saving Frequency :    ", adjustl ( char_label(11) )
-			write ( 95, "(A27,5X,A20)" ) "Adjustment Frequency:      ", adjustl ( char_label(12) )
-			write ( 95, "(A27,5X,A20)" ) "Simulation Resets:         ", adjustl ( char_label(13) )
+			write ( 95, "(A27,5X,A30)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
+			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:       ", adjustl ( char_label(8)  )
+			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:         ", adjustl ( char_label(9)  )
+			write ( 95, "(A27,5X,A20)" ) "Production Cycles:            ", adjustl ( char_label(10) )
+			write ( 95, "(A27,5X,A20)" ) "Data Saving Frequency :       ", adjustl ( char_label(11) )
+			write ( 95, "(A27,5X,A20)" ) "Adjustment Frequency:         ", adjustl ( char_label(12) )
+			write ( 95, "(A27,5X,A20)" ) "Simulation Resets:            ", adjustl ( char_label(13) )
 			write ( 95, * ) " "
 			if ( traj_check ) then
 				write ( 95, "(A33)" ) "Trajectory of particles computed."
@@ -1252,7 +1252,7 @@ program main
 				write ( 95, "(A46)" ) "Potential energy computed only for all cycles."
 			end if
 			write ( 95, * )  " "
-			write ( 95, "(A27,5X,A20,A4)")  "Simulation length:         ", &
+			write ( 95, "(A27,5X,A20,A4)")  "Simulation length:            ", &
 			&				 adjustl ( char_label(14) ), " sec"
 		close ( 95 )
 	end if
