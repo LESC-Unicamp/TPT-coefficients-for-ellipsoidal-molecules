@@ -193,7 +193,7 @@ The user is allowed to select one of three crystalline structures for the initia
 </p>
 
 <p align="justify">
-The initial configuration (position and orientation of particles) is, by default, written out in an external file and is also properly formatted to be uploaded in OVITO. An example of these crystalline structures can be seen below for <code>&rho;* = 0.5</code>.
+The initial configuration (position and orientation of particles) is, by default, written out in an external file and is also properly formatted to be uploaded in OVITO. An example of these crystalline structures can be seen below for <code>&kappa;&rho;* = 0.5</code>.
 </p>
 
 <em><p align="center">
