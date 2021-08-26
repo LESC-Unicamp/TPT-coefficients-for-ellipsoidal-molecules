@@ -184,7 +184,7 @@ The last three entries are inquiry variables. <code>trajectory_inquiry</code> in
 </p>
 
 <p align="justify">
-Reduced number density <code>&rho;*</code> and elongation <code>&kappa;</code> must be provided by the user on the fly.
+Reduced number density <code>&kappa;&rho;*</code> and elongation <code>&kappa;</code> must be provided by the user on the fly.
 </p>
 
 ## Initial Configuration
