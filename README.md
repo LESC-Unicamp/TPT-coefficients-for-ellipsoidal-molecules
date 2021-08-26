@@ -271,7 +271,7 @@ sudo ./main.out
 
 <p align="justify">
 After setting up the molecular structure and organizing folders and files, the algorithm will print out a user-friendly simulation summary. Here the user will be able to 
- review all important parameters (number of cycles, attractive range, reduced variables etc.) prior to the Monte Carlo simulation itself. After checking up everything, the
+ review all important parameters (number of cycles, attractive range, reduced variables etc.) prior to the Monte Carlo simulation itself. After checking everything up, the
  user must press a <code>KEY</code> to continue the simulation.
 </p>
 
