@@ -46,7 +46,7 @@ This <i>NVT</i>-Monte Carlo algorithm was originally designed to test an equatio
  perturbation theory, considering the reference fluid as hard ellipsoids of revolution interating via short-range repulsive
  forces according to the Hard Gaussian Overlap (HGO) approach (<a href="https://doi.org/10.1063/1.1677837">Berne and Pechukas, <b>J. Chem. Phys.</b>, 56, 4213, 1972</a>)
  and the perturbed system ruled by attractive forces defined by a symmetrically spherical square-well potential. Our aim is to investigate
- the valid limits of reduced number density (&rho;*) and ellipsoidal elongation (&kappa;) by calculating the first- and
+ the valid limits of reduced number density (&kappa;&rho;*) and ellipsoidal elongation (&kappa;) by calculating the first- and
  second-order perturbation coefficients, as well as the orientational ordering parameter of a uniaxial nematic phase. Please check our
  <a href="#">paper</a> for more details.
 </p><br>
