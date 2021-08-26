@@ -189,7 +189,7 @@ Reduced number density <code>&kappa;&rho;*</code> and elongation <code>&kappa;</
 
 ## Initial Configuration
 <p align="justify">
-The user is allowed to select one of three crystalline structures for the initial molecular configuration at the beginning of the simulation. Structures are either stretched, narrowed, or pure cubic geometries depending on the ellipsoidal elongation. The available structures are: simple cube (SC), body-centered cube (BCC), or face-centered cube (FCC). Like <code>&rho;*</code> and <code>&kappa;</code> variables, the initial molecular configuration is also provided by the user on the fly.
+The user is allowed to select one of three crystalline structures for the initial molecular configuration at the beginning of the simulation. Structures are either stretched, narrowed, or pure cubic geometries depending on the ellipsoidal elongation. The available structures are: simple cube (SC), body-centered cube (BCC), or face-centered cube (FCC). Like <code>&kappa;&rho;*</code> and <code>&kappa;</code> variables, the initial molecular configuration is also provided by the user on the fly.
 </p>
 
 <p align="justify">
