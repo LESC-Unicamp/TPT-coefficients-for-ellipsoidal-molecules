@@ -50,6 +50,25 @@ module initvar
 		implicit none
 
 		! *******************************************************************************
+		! Apparent number density (reduced)
+		! *******************************************************************************
+		!  Since only one side of the simulation box is proportional to the axial
+		!  dimension of the molecular geometry, the volume of the box will increase for
+		!  length-to-diameter aspect ratios greater than 0. In this case, the reduced
+		!  number density will be different from the value entered by the user. Therefore,
+		!  the reduced number density defined as an OTF variable is an apparent density
+		!  (ρ*,apa). It is related to the real number density (ρ*,real) as follows:
+		!
+		!                         ρ*,apa = ρ*,real × ( 1 + AR )
+		!
+		!                                       or
+		!
+		!              ρ,apa = ρ,real × ( D + L ), in dimensional variables
+		!
+		!  where AR is the geometrical aspect ratio. For spherocylinders, AR = L/D.
+		! *******************************************************************************
+
+		! *******************************************************************************
 		! Reduced number density (OTF variable)
 		! *******************************************************************************
 		rdensity_loop: do
