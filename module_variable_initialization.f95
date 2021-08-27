@@ -50,29 +50,27 @@ module initvar
 		implicit none
 
 		! *******************************************************************************
-		! Apparent number density (reduced)
+		! Reduced number density (κρ*)
 		! *******************************************************************************
 		!  Since only one side of the simulation box is proportional to the axial
-		!  dimension of the molecular geometry, the volume of the box will increase for
-		!  length-to-diameter aspect ratios greater than 0. In this case, the reduced
-		!  number density will be different from the value entered by the user. Therefore,
-		!  the reduced number density defined as an OTF variable is an apparent density
+		!  dimension of the molecular geometry, the volume of the simulation box will thus 
+		!  proportionally increase for elongations greater than 1 and proportionally 
+		!  decrease for elongations lower than 1. In this case, the reduced number density 
+		!  entered by the user is not the real number density. Therefore, the reduced 
+		!  number density defined as an OTF variable is, let's say, an apparent density
 		!  (ρ*,apa). It is related to the real number density (ρ*,real) as follows:
 		!
-		!                         ρ*,apa = ρ*,real × ( 1 + AR )
+		!                         ρ*,apa = AR × ρ*,real
 		!
-		!                                       or
-		!
-		!              ρ,apa = ρ,real × ( D + L ), in dimensional variables
-		!
-		!  where AR is the geometrical aspect ratio. For spherocylinders, AR = L/D.
+		!  where AR is the geometrical aspect ratio. For ellipsoids of revolution, 
+		!  AR = κ (elongation).
 		! *******************************************************************************
 
 		! *******************************************************************************
 		! Reduced number density (OTF variable)
 		! *******************************************************************************
 		rdensity_loop: do
-			print *, "Enter a reduced number density: "
+			print *, "Enter a reduced number density (κρ*): "
 			read ( *, * ) rho
 			! Cannot be 0 or negative
 			if ( rho > 0.d0 ) then
