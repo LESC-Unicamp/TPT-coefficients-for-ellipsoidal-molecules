@@ -70,7 +70,7 @@ module globalvar
 	real*8			:: cell_length		! Length of unit cell (cubic structure)
 	real*8, dimension (3)	:: coordinate		! Length (x,y,z) of unit cell (stretched/narrowed cubic structure)
 	real*8, dimension (3)	:: box_length		! Length (x,y,z) of simulation box
-	real*8			:: rho			! Reduced number density
+	real*8			:: rho			! Reduced number density (κρ*)
 	real*8			:: temp			! Reduced temperature
 	real*8			:: sigsphere		! Spherical diameter
 	real*8			:: elongation		! Ellipsoidal elongation parameter
