@@ -60,7 +60,7 @@ module initvar
 		!  number density defined as an OTF variable is, let's say, an apparent density
 		!  (ρ*,apa). It is related to the real number density (ρ*,real) as follows:
 		!
-		!                         ρ*,apa = AR × ρ*,real
+		!                             ρ*,apa = AR × ρ*,real
 		!
 		!  where AR is the geometrical aspect ratio. For ellipsoids of revolution, 
 		!  AR = κ (elongation).
