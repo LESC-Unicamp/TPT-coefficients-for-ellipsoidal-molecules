@@ -48,7 +48,7 @@ This <i>NVT</i>-Monte Carlo algorithm was originally designed to test an equatio
  and the perturbed system ruled by attractive forces defined by a symmetrically spherical square-well potential. Our aim is to investigate
  the valid limits of reduced number density (&kappa;&rho;*) and ellipsoidal elongation (&kappa;) by calculating the first- and
  second-order perturbation coefficients, as well as the orientational ordering parameter of a uniaxial nematic phase. Please check our
- <a href="#">paper</a> for more details.
+ <a href="https://doi.org/10.1016/j.fluid.2021.113209">paper</a> for more details.
 </p><br>
 
 ## Contents
@@ -64,7 +64,7 @@ This <i>NVT</i>-Monte Carlo algorithm was originally designed to test an equatio
 ## Disclaimer
 <p align="justify">
 The authors make no warranties about the use of this software. The authors hold no liabilities for the use of this software. The authors do not 
- recommend the use of this software whatsoever. The algorithm is made freely available to clarify any details discussed in the <a href="#">paper</a>.
+ recommend the use of this software whatsoever. The algorithm is made freely available to clarify any details discussed in the <a href="https://doi.org/10.1016/j.fluid.2021.113209">paper</a>.
  All information contained herein regarding any specific methodology does not constitute or imply its endorsement or recommendation by the authors.
 </p>
 
@@ -316,7 +316,7 @@ The simulation is splitted into two phases: the equilibration phase and the prod
  MRD, the other limits are merely arbitrary. Hence, when the MDs reach the upper limit, the dynamic threshold increases, and when the MDs reach the lower limit, the dynamic 
  threshold decreases.<br><br>
  <b>NOTE:</b><i> Whenever the ratio threshold is modified, the simulation is reset to its initial values (configuration, energy, etc.), except for the current equilibration
- cycle. It is noteworthy to mention that we did not implement a simulation reset in our <a href="#">paper</a></i> (the final results are not significantly different).
+ cycle. It is noteworthy to mention that we did not implement a simulation reset in our <a href="https://doi.org/10.1016/j.fluid.2021.113209">paper</a></i> (the final results are not significantly different).
 </p>
 
 <p align="justify">
