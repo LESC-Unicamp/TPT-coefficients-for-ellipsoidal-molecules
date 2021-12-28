@@ -5,8 +5,8 @@
 !                                    of the Reference System.                                     !
 !      The spherical square-well potential is used to model the intermolecular interactions       !
 !                                    in the Perturbed System.                                     !
-!												  !
-! Version number: 1.0.0										  !
+!                                                                                                 !
+! Version number: 1.0.0                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
@@ -89,12 +89,12 @@ program main
 	! ***************************************************************************************
 	! Character variables
 	! ***************************************************************************************
-	character		:: l_format*32		! Number of attractive range parameters (format)
+	character		:: l_format*32	! Number of attractive range parameters (format)
 
 	! ***************************************************************************************
 	! Logical variables
 	! ***************************************************************************************
-	logical			:: overlap	! Detects overlap between two particles (HGO) 		: TRUE = overlap detected;  FALSE = overlap not detected
+	logical			:: overlap	! Detects overlap between two particles (HGO)   : TRUE = overlap detected;  FALSE = overlap not detected
 	logical			:: flag		! Generic true/false flag
 
 	! ***************************************************************************************
