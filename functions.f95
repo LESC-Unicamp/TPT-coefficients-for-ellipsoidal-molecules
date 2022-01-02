@@ -2,7 +2,7 @@
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !        This code contains all functions used in the main program and in the subroutines.        !
 !												  !
-! Version number: 1.0.0										  !
+! Version number: 1.0.1										  !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
