@@ -26,7 +26,7 @@
 
 module initvar
 
-	! Uses one module: global variable
+	! Uses one module: global variables
 	use globalvar
 
 	implicit none
