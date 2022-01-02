@@ -2,8 +2,8 @@
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !           This module defines the variables used by the main program and most of the            !
 !         subroutines and functions. A brief description is presented for each variable.          !
-!												  !
-! Version number: 1.0.0										  !
+!                                                                                                 !
+! Version number: 1.0.1                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
@@ -12,7 +12,7 @@
 !                             Original Developer: Joyce Tavares Lopes                             !
 !                             Supervisor: Luís Fernando Mercier Franco                            !
 !                             --------------------------------------                              !
-!                                            June 20th                                            !
+!                                            January 2nd                                          !
 ! ############################################################################################### !
 ! Main References:                  M. P. Allen, D. J. Tildesley                                  !
 !                           Oxford University Press, 2nd Edition (2017)                           !
