@@ -1,7 +1,7 @@
 ! ############################################################################################### !
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !      This module initialize common variables (number of particles, reduced number density,      !
-!       reduced temperature etc.), Monte Carlo parameters (total number of cycles, number of      ! 
+!       reduced temperature etc.), Monte Carlo parameters (total number of cycles, number of      !
 ! equilibration cycles etc.), and Block Averaging parameters (maximum/minimum number of blocks).  !
 !  This module also initialize some inquiry (character) variables, allowing the user to control   !
 ! which results will be written out in external files and to enable post-processing subroutines.  !
@@ -15,7 +15,7 @@
 !                             Original Developer: Joyce Tavares Lopes                             !
 !                             Supervisor: Luís Fernando Mercier Franco                            !
 !                             --------------------------------------                              !
-!                                            June 20th                                            !
+!                                        January 2nd, 2022                                        !
 ! ############################################################################################### !
 ! Main Reference:                   M. P. Allen, D. J. Tildesley                                  !
 !                           Oxford University Press, 2nd Edition (2017)                           !
@@ -98,11 +98,11 @@ module initvar
 		! Output file descriptors (elongation [1] and reduced number density [2])
 		! *******************************************************************************
 		!  Might be necessary to change formats if the number of decimal places is
-		!  higher than 2 or the number of characters is higher than 4.
+		!  higher than 5.
 		! *******************************************************************************
-		format_file1 = "(F4.2)"
+		format_file1 = "(F0.5)"
 		write ( descriptor_file1, format_file1 ) elongation
-		format_file2 = "(F4.2)"
+		format_file2 = "(F0.5)"
 		write ( descriptor_file2, format_file2 ) rho
 
 		! *******************************************************************************
