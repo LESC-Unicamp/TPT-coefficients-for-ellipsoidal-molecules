@@ -8,7 +8,7 @@
 !                  The code below is meant for Ubuntu 20.04 operational systems.                  !
 !                   We have not provided an alternative code for Windows users.                   !
 !                                                                                                 !
-! Version number: 1.0.0                                                                           !
+! Version number: 1.0.1                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
@@ -17,7 +17,7 @@
 !                             Original Developer: Joyce Tavares Lopes                             !
 !                             Supervisor: Luís Fernando Mercier Franco                            !
 !                             --------------------------------------                              !
-!                                            June 20th                                            !
+!                                            January 2nd                                          !
 ! ############################################################################################### !
 ! Disclaimer note: Authors assume no responsibility or liability for the use of this code.        !
 ! ############################################################################################### !
@@ -196,11 +196,10 @@ module folders
 		implicit none
 
 		! *******************************************************************************
-		! Attractive parameter format
-		!  Might be necessary to change if the number of decimal places is higher than 2 or
-		!  the number of characters is higher than 4.
+		! Attractive parameter format (free-width)
+		!  Might be necessary to change if the number of decimal places is higher than 5.
 		! *******************************************************************************
-		format_lamb = "(F4.2)"
+		format_lamb = "(F0.5)"
 
 		! *******************************************************************************
 		! Attractive parameter subfolders
