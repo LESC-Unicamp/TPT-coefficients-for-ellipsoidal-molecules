@@ -1,8 +1,8 @@
 ! ############################################################################################### !
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !                  This code contains all subroutines used in the main program.                   !
-!												  !
-! Version number: 1.0.0										  !
+!                                                                                                 !
+! Version number: 1.0.1                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
@@ -11,7 +11,7 @@
 !                             Original Developer: Joyce Tavares Lopes                             !
 !                             Supervisor: Luís Fernando Mercier Franco                            !
 !                             --------------------------------------                              !
-!                                            June 20th                                            !
+!                                        January 2nd, 2022                                        !
 ! ############################################################################################### !
 ! Main References:                  M. P. Allen, D. J. Tildesley                                  !
 !                           Oxford University Press, 2nd Edition (2017)                           !
