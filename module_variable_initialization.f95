@@ -6,7 +6,7 @@
 !  This module also initialize some inquiry (character) variables, allowing the user to control   !
 ! which results will be written out in external files and to enable post-processing subroutines.  !
 !                                                                                                 !
-! Version number: 1.0.0                                                                           !
+! Version number: 1.0.1                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
