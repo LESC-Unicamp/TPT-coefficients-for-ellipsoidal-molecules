@@ -1,12 +1,12 @@
 ! ############################################################################################### !
 !              Canonical Monte Carlo algorithm for ellipsoid-of-revolution molecules              !
 !       The Hard Gaussian Overlap (B. J. Berne & P. Pechukas, 1972) model is used to trial        !
-!            moves, and establishes the molecular configurations (position and orientation)       !
+!          moves, and establishes the molecular configurations (position and orientation)         !
 !                                    of the Reference System.                                     !
 !      The spherical square-well potential is used to model the intermolecular interactions       !
 !                                    in the Perturbed System.                                     !
 !                                                                                                 !
-! Version number: 1.0.0                                                                           !
+! Version number: 1.0.1                                                                           !
 ! ############################################################################################### !
 !                                University of Campinas (Unicamp)                                 !
 !                                 School of Chemical Engineering                                  !
@@ -15,7 +15,7 @@
 !                             Original Developer: Joyce Tavares Lopes                             !
 !                             Supervisor: Luís Fernando Mercier Franco                            !
 !                             --------------------------------------                              !
-!                                            June 20th                                            !
+!                                        January 2nd, 2022                                        !
 ! ############################################################################################### !
 ! Main References:                    B. J. Berne, P. Pechukas                                    !
 !                                  J. Chem. Phys. 56, 4213 (1972)                                 !
@@ -68,6 +68,7 @@ program main
 	real*8			:: modrij	! Magnitude of the vector distance between particles i and j
 	real*8			:: max_boxl	! Largest box length
 	real*8			:: max_elong	! Largest axis diameter of an ellipsoidal geometry
+	real*8			:: cutoff	! Cutoff diameter
 	real*8			:: msgaux	! Auxiliar
 	real*8, dimension (3)	:: ei, ej	! Orientation of particles i and j
 	real*8, dimension (3)	:: rij		! Vector distance between particles i and j
@@ -348,6 +349,21 @@ program main
 	end do
 
 	! ***************************************************************************************
+	! Cutoff diameter
+	! ***************************************************************************************
+	!  A cutoff distance equivalent to the diameter of a spherical geometry circumscribing
+	!  an ellipsoid of revolution. In this case, the spherical diameter corresponds to the
+	!  major axis diameter of the ellipsoid of revolution.
+	! ***************************************************************************************
+	!  REMINDER: the fundamental unit of length is 'sisma_s'.
+	! ***************************************************************************************
+	if ( elongation <= 1.d0 ) then
+		cutoff = 1.d0		! or 'sigma_s' for dimensional variables
+	else
+		cutoff = elongation	! or 'sigma_e' for dimensional variables
+	end if
+
+	! ***************************************************************************************
 	! Overlap check (initial configuration)
 	! ***************************************************************************************
 	!  Searches for possible molecular overlaps in the initial configuration
@@ -378,21 +394,26 @@ program main
 			! ***********************************************************************
 			modrij  = dsqrt( ( rij(1) * rij(1) ) + ( rij(2) * rij(2) ) + ( rij(3) * rij(3) ) )
 			! ***********************************************************************
-			! Vector normalization
+			! Cutoff distance
 			! ***********************************************************************
-			urij(:) = rij(:) / modrij
-			! ***********************************************************************
-			! Hard Gaussian Overlap (HGO) - Contact distance
-			! See 'functions' file for more information
-			! ***********************************************************************
-			rhgo = sigmahgo(ei,ej,urij)
-			! ***********************************************************************
-			! Overlap criterion
-			! ***********************************************************************
-			if ( modrij <= rhgo ) then
-				write ( *, 100 ) i, j, rho
-				! Stop program if overlap is detected
-				call exit()
+			if ( modrij <= cutoff ) then
+				! ***************************************************************
+				! Vector normalization
+				! ***************************************************************
+				urij(:) = rij(:) / modrij
+				! ***************************************************************
+				! Hard Gaussian Overlap (HGO) - Contact distance
+				! See 'functions' file for more information
+				! ***************************************************************
+				rhgo = sigmahgo(ei,ej,urij)
+				! ***************************************************************
+				! Overlap criterion
+				! ***************************************************************
+				if ( modrij <= rhgo ) then
+					write ( *, 100 ) i, j, rho
+					! Stop program if overlap is detected
+					call exit()
+				end if
 			end if
 
 		end do
@@ -814,11 +835,11 @@ program main
 					!  OBS.: These parameters were not resetted in the 
 					!  Monte Carlo simulations performed in our paper.
 					! *******************************************************
-					if ( resetmc ) then
-						call reset_system()
-						! Advance loop
-						cycle
-					end if
+					!if ( resetmc ) then
+					!	call reset_system()
+					!	! Advance loop
+					!	cycle
+					!end if
 
 				end if
 
@@ -917,11 +938,11 @@ program main
 					!  OBS.: These parameters were not resetted in the 
 					!  Monte Carlo simulations performed in our paper.
 					! *******************************************************
-					if ( resetmc ) then
-						call reset_system()
-						! Advance loop
-						cycle
-					end if
+					!if ( resetmc ) then
+					!	call reset_system()
+					!	! Advance loop
+					!	cycle
+					!end if
 
 				end if
 
@@ -967,7 +988,7 @@ program main
 			write ( *, "(A10,F5.1,A1)" ) "Progress: ", ( 100.d0 ) * ( dble( cycles ) / dble( max_cycles ) ), "%"
 			write ( *, "(A18,I10)" ) "Remaining cycles: ", ( max_cycles - cycles )
 			if ( reset_c > 0 ) then
-				write ( *, "(A19,I3)" ) "Simulation resets: ", reset_c
+				write ( *, "(A19,I3)" ) "Threshold resets: ", reset_c
 			end if
 			write ( *, * ) " "
 		end if
@@ -993,7 +1014,7 @@ program main
 		close ( 60 + counter_lambda )
 	end do
 
- 400	format ( "Attractive range of ", F4.2, ":", F8.4 )
+ 400	format ( "Attractive range of ", F0.5, ":", F0.5 )
  
  	! ***************************************************************************************
 	! Summary report
@@ -1028,9 +1049,9 @@ program main
 	! ***************************************************************************************
 	! Messages
 	! ***************************************************************************************
- 450	format ( "Now calculating TPT coefficients for an attractive range of ", F4.2, "..." )
+ 450	format ( "Now calculating TPT coefficients for an attractive range of ", F0.5, "..." )
 
- 500	format ( "Calculation of TPT coefficients for an attractive range of ", F4.2, " finished successfully!" )
+ 500	format ( "Calculation of TPT coefficients for an attractive range of ", F0.5, " finished successfully!" )
  
  550	format ( "The results are reported in a log file in the 'Perturbed_Coefficient' folder." )
 
@@ -1090,10 +1111,10 @@ program main
 				&    //trim(descriptor_file2)//".csv")
 
 					write ( 150, "(A18,I4.4)" ) "No. of particles: ", n_particles
-					write ( 150, "(A21,F4.2)" ) "Reduced temperature: ", temp
-					write ( 150, "(A24,F4.2)" ) "Reduced number density (κρ*): ", rho
-					write ( 150, "(A12,F5.2)" ) "Elongation: ", elongation
-					write ( 150, "(A18,F4.2)" ) "Attractive range: ", lambda(counter_lambda)
+					write ( 150, "(A21,F0.5)" ) "Reduced temperature: ", temp
+					write ( 150, "(A24,F0.5)" ) "Reduced number density (κρ*): ", rho
+					write ( 150, "(A12,F0.5)" ) "Elongation: ", elongation
+					write ( 150, "(A18,F0.5)" ) "Attractive range: ", lambda(counter_lambda)
 					write ( 150, * ) " "
 					write ( 150, 600 )
 					write ( 150, 650 ) a1(counter_lambda), dpa1(counter_lambda), a2(counter_lambda), &
@@ -1124,15 +1145,15 @@ program main
 	! ***************************************************************************************
 	format_file0 = "(I3)"
 	write ( descriptor_file0, format_file0 ) n_lambda
-	l_format = "("//trim(descriptor_file0)//"F6.2)"
+	l_format = "("//trim(descriptor_file0)//"F0.5)"
 
 	! ***************************************************************************************
 	! Simulation log descriptors
 	! ***************************************************************************************
 	write ( char_label(1),  "(I5)"     ) n_particles
-	write ( char_label(2),  "(F4.2)"   ) elongation
-	write ( char_label(3),  "(F4.2)"   ) rho
-	write ( char_label(4),  "(F5.2)"   ) temp
+	write ( char_label(2),  "(F0.5)"   ) elongation
+	write ( char_label(3),  "(F0.5)"   ) rho
+	write ( char_label(4),  "(F0.5)"   ) temp
 	if ( coef_check ) then
 		write ( char_label(5),  "(I4)" ) min_blocks
 		write ( char_label(6),  "(I4)" ) max_blocks
@@ -1151,7 +1172,7 @@ program main
 	! ***************************************************************************************
 	inquire ( FILE = "Simulation_Log.dat", EXIST = file_exist )
 
- 700	format(i4,"/",i2.2,"/",i2.2," ",i2.2,":",i2.2,":",i2.2)
+ 700	format(I4,"/",I2.2,"/",I2.2," ",I2.2,":",I2.2,":",I2.2)
 
 	! ***************************************************************************************
 	! Simulation log
