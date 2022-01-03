@@ -1145,7 +1145,7 @@ program main
 	! ***************************************************************************************
 	format_file0 = "(I3)"
 	write ( descriptor_file0, format_file0 ) n_lambda
-	l_format = "("//trim(descriptor_file0)//"F0.5)"
+	l_format = "("//trim(descriptor_file0)//"(F0.5,1X))"
 
 	! ***************************************************************************************
 	! Simulation log descriptors
@@ -1203,7 +1203,7 @@ program main
 				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
 				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks :    ", adjustl ( char_label(6)  )
 			end if
-			write ( 95, "(A27,5X,A30)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
+			write ( 95, "(A27,5X,A)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
 			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:       ", adjustl ( char_label(8)  )
 			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:         ", adjustl ( char_label(9)  )
 			write ( 95, "(A27,5X,A20)" ) "Production Cycles:            ", adjustl ( char_label(10) )
@@ -1249,7 +1249,7 @@ program main
 				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
 				write ( 95, "(A27,5X,A20)" ) "Maximum Number of Blocks :    ", adjustl ( char_label(6)  )
 			end if
-			write ( 95, "(A27,5X,A30)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
+			write ( 95, "(A27,5X,A)" ) "Attractive Range:             ", adjustl ( char_label(7)  )
 			write ( 95, "(A27,5X,A20)" ) "Total Number of Cycles:       ", adjustl ( char_label(8)  )
 			write ( 95, "(A27,5X,A20)" ) "Equilibration Cycles:         ", adjustl ( char_label(9)  )
 			write ( 95, "(A27,5X,A20)" ) "Production Cycles:            ", adjustl ( char_label(10) )
