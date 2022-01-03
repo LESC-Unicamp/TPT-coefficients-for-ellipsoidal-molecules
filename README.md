@@ -43,7 +43,7 @@ Luís Fernando Mercier Franco<br></p>
 <p align="justify">
 This <i>NVT</i>-Monte Carlo algorithm was originally designed to test an equation of state developed for ellipsoidal molecules
  (<a href="https://doi.org/10.1021/acs.iecr.9b00766">Lopes and Franco, <b>Ind. Eng. Chem. Res.</b>, 58, 16, 6850–6859, 2019</a>). This thermodynamic model applies a
- perturbation theory, considering the reference fluid as hard ellipsoids of revolution interating via short-range repulsive
+ perturbation theory, considering the reference fluid as hard ellipsoids of revolution interacting via short-range repulsive
  forces according to the Hard Gaussian Overlap (HGO) approach (<a href="https://doi.org/10.1063/1.1677837">Berne and Pechukas, <b>J. Chem. Phys.</b>, 56, 4213, 1972</a>)
  and the perturbed system ruled by attractive forces defined by a symmetrically spherical square-well potential. Our aim is to investigate
  the valid limits of reduced number density (&kappa;&rho;*) and ellipsoidal elongation (&kappa;) by calculating the first- and
@@ -101,14 +101,14 @@ The <code>-O3</code> option is an optimization flag that improves compilation pe
 
 ## Reporting Errors
 <p align="justify">
-If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/nathanbsouza/montecarlo_hgosw/issues">Issues</a> tab.
+If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/LESC-Unicamp/TPT-coefficients-for-ellipsoidal-molecules/issues">Issues</a> tab.
 </p>
 
 ## Data Input
 <p align="justify">
 Before running the code, the user should first prepare an input file named <code>mchgo_input.ini</code> containing most of the external variables.
- These variables are read by the module <a href="https://github.com/nathanbsouza/montecarlo_hgosw/blob/main/module_variable_initialization.f95">Variable Initialization</a>.
- An <a href="https://github.com/nathanbsouza/montecarlo_hgosw/blob/main/mchgo_input.ini">example</a> of an input file was provided and explained below
+ These variables are read by the module <a href="https://github.com/LESC-Unicamp/TPT-coefficients-for-ellipsoidal-molecules/blob/main/module_variable_initialization.f95">Variable Initialization</a>.
+ An <a href="https://github.com/LESC-Unicamp/TPT-coefficients-for-ellipsoidal-molecules/blob/main/mchgo_input.ini">example</a> of an input file was provided and explained below
  (<code>d0</code> means double precision):
 </p>
 
