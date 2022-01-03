@@ -1197,7 +1197,7 @@ program main
 			write ( 95, * ) " "
 			write ( 95, "(A27,5X,A20)" ) "Number of Particles:          ", adjustl ( char_label(1)  )
 			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:         ", adjustl ( char_label(2)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density (κρ*): ", adjustl ( char_label(3)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density:       ", adjustl ( char_label(3)  )
 			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:          ", adjustl ( char_label(4)  )
 			if ( coef_check ) then
 				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
@@ -1243,7 +1243,7 @@ program main
 			write ( 95, * ) " "
 			write ( 95, "(A27,5X,A20)" ) "Number of Particles:          ", adjustl ( char_label(1)  )
 			write ( 95, "(A27,5X,A20)" ) "Ellipsoid Elongation:         ", adjustl ( char_label(2)  )
-			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density (κρ*): ", adjustl ( char_label(3)  )
+			write ( 95, "(A27,5X,A20)" ) "Reduced Number Density:       ", adjustl ( char_label(3)  )
 			write ( 95, "(A27,5X,A20)" ) "Reduced Temperature:          ", adjustl ( char_label(4)  )
 			if ( coef_check ) then
 				write ( 95, "(A27,5X,A20)" ) "Minimum Number of Blocks :    ", adjustl ( char_label(5)  )
