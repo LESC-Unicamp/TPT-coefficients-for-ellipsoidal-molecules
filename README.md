@@ -346,6 +346,7 @@ At the end of the simulation, the program writes out a log file containing all s
 </p>
 
 ## Citing Us
+If our code was useful in any way, we kindly ask you to cite our work "<a href="https://doi.org/10.1016/j.fluid.2021.113209">Thermodynamic perturbation theory coefficients for ellipsoidal molecules</a>".
 
 ---
 
