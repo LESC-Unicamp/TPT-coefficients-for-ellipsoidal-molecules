@@ -60,6 +60,7 @@ This <i>NVT</i>-Monte Carlo algorithm was originally designed to test an equatio
 * <a href="#initial-configuration">6. Initial Configuration</a>
 * <a href="#files-and-folders">7. Files and Folders</a>
 * <a href="#running-the-code">8. Running the Code</a>
+* <a href="#citing-us">9. Citing Us</a>
 
 ## Disclaimer
 <p align="justify">
@@ -343,6 +344,8 @@ After completing the Metropolis sampling, the algorithm evokes the block-average
 At the end of the simulation, the program writes out a log file containing all simulation details. Later simulations will only append information to the log file instead of
  overwriting it.
 </p>
+
+## Citing Us
 
 ---
 
